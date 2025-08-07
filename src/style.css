@@ -1,3 +1,154 @@
-h1 {
-  font-family: Arial, Helvetica, sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background: #ffffff;
+  color: #000000;
+  overflow-x: hidden;
+}
+
+.homepage {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  position: relative;
+}
+
+/* Subtle grid pattern background */
+.homepage::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+}
+
+.content {
+  text-align: center;
+  z-index: 10;
+  position: relative;
+  max-width: 800px;
+  padding: 60px 40px;
+}
+
+.logo-section {
+  border-left: 4px solid #000000;
+  padding-left: 40px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  display: inline-block;
+  text-align: left;
+}
+
+.company-name {
+  font-size: 4rem;
+  font-weight: 300;
+  letter-spacing: -2px;
+  color: #000000;
+  margin-bottom: 20px;
+  line-height: 1;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+.company-details {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #666666;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.company-type {
+  color: #000000;
+  font-weight: 500;
+}
+
+.separator {
+  margin: 0 15px;
+  color: #cccccc;
+}
+
+.company-location {
+  color: #666666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content {
+    padding: 40px 20px;
+  }
+  
+  .logo-section {
+    padding-left: 30px;
+    border-left-width: 3px;
+  }
+  
+  .company-name {
+    font-size: 2.5rem;
+    letter-spacing: -1px;
+  }
+  
+  .company-details {
+    font-size: 1rem;
+  }
+  
+  .separator {
+    margin: 0 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-section {
+    padding-left: 20px;
+    border-left-width: 2px;
+  }
+  
+  .company-name {
+    font-size: 2rem;
+  }
+  
+  .company-details {
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+  }
+  
+  .separator {
+    margin: 0 8px;
+  }
+}
+
+/* Subtle hover effect */
+.logo-section:hover {
+  border-left-color: #333333;
+  transition: border-left-color 0.3s ease;
+}
+
+.company-name:hover {
+  color: #333333;
+  transition: color 0.3s ease;
+}
+
+/* Print styles */
+@media print {
+  .homepage {
+    height: auto;
+    min-height: 50vh;
+  }
+  
+  .homepage::before {
+    display: none;
+  }
 }
